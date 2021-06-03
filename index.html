@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body,h1 {font-family: "Raleway", sans-serif}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+.page-content {
+  display: grid;
+  grid-gap: 3rem;
+  padding: 1rem;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  height: 140%;
+  width: 110%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+  .card {
+    height: 350px;
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.card:nth-child(1):before {
+  background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(2):before {
+  background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(3):before {
+  background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(4):before {
+  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(5):before {
+  background-image: url("pexels-photo-1172064.jpeg");
+}
+.card:nth-child(6):before {
+  background-image: url("https://images.pexels.com/photos/2217365/pexels-photo-2217365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+.card:nth-child(7):before {
+  background-image: url("https://images.pexels.com/photos/1060413/pexels-photo-1060413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+.card:nth-child(8):before {
+  background-image: url("https://images.pexels.com/photos/1334116/pexels-photo-1334116.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+.btn:hover {
+  background-color: #0d0d0d;
+}
+.btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+.card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .content,
+.card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+</style>
+<body>
+<!-- Header -->
+<header class="w3-display-container w3-content w3-center w3-margin-bottom" style="max-width:1500px">
+  <img class="w3-image" src="pexels-josh-willink-69096.jpg" alt="Me" width="1500" height="400">
+  <div class="w3-display-middle w3-display-container w3-animate-opacity w3-text-white">
+    <h1 class="w3-jumbo w3-animate-top">Hey Mokshada!</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">Wishing you the best for your maternity from all of us!</p>
+  </div>
+</header>
+
+<main class="page-content">
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Vinay Cerejo</h2>
+      <p class="copy">Something tells me you'll enjoy your new boss while you're on maternity leave!</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Raj Verma</h2>
+      <p class="copy">Being a parent is Joy, It is good to hear that a new member will be joining your family. I wish you all the best , take care of yourself and stay safe.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Manish Sharma</h2>
+      <p class="copy">Hey Mokshada,
+
+	  <br>
+	  <br>
+We will miss you when you are away busy with your new project of Motherhood. I wish you lot of health and wish you spend this time with love and happiness.
+<br>
+<br>
+
+Late night calls and P1s are now all queued up for you :-P Good luck with that. It will be super exciting to handle 2 kids together</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Suraj Pandit</h2>
+      <p class="copy">Congratulations Mokshada !!!
+	
+<br>
+<br>
+I wish you all the best on your maternity leave. I hope you thoroughly enjoy every blessed moment of your time with your adorable little one.
+
+<br>
+<br>
+
+May every day of your maternity leave be as bright as the sun.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Aigis Nalian</h2>
+      <p class="copy">To Mokshada,
+
+<br>
+
+Children bring such joy to life
+
+<br>
+
+Giggles filled with light
+
+<br>
+
+Children make the world glad
+
+<br>
+
+Setting hearts to right
+
+<br>
+
+Children know that love is found
+
+<br>
+
+In every living thing
+
+<br>
+
+We celebrate their hearts of gold
+
+<br>
+
+And all the smiles they bring
+
+ <br>
+
+God Bless, enjoy, rest and relax, and may you come back with renewed vim and vigor.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Rohan Butala</h2>
+      <p class="copy">Enjoy all the little moments with your child. These are experiences that make memories for a lifetime!  Congratulations and All the best …</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Amit Wadhwa</h2>
+      <p class="copy">Hey Mokshada, All the very best for the fun-filled and roller coaster times ahead. Do take great care of yourself and keep eating and be healthy :)</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Gaurav Sahu</h2>
+      <p class="copy">Hey Mokshada, Congratulations again! Wishing you and your little one the best of health and spirits. 
+	  <br>
+	  <br>
+	  I'm gonna miss having Ishaan on our calls the most. But I guess we can make it up by having two kids interrupting the calls when you come back xD. 
+	  <br>
+	  <br>
+	  Have a great time and take care Mokshada!</p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
